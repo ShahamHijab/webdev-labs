@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="password"], select {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #000;
+            border-radius: 3px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 5px 15px;
+            margin-top: 10px;
+            border: 1px solid #000\;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Novel Services Login</h2>
+    <table>
+        <tr>
+            <td><label for="username">Username: </label></td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password: </label></td>
+            <td><input type="password"></td>
+        </tr>
+        <tr>
+            <td><label for="city">City of Employment: </label></td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td><label for="server">Web Server: </label></td>
+            <td><select name="server">
+                <option value="">--- Choose a server ---</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label for="role">Please specify your role: </label></td>
+            <td><input type="radio">Admin <br>
+                <input type="radio">Engineer <br>
+                <input type="radio">Manager <br>
+                <input type="radio">Guest <br></td>
+        </tr>
+        <tr>
+            <td><label for="sign">Single Sign-on to the following: </label></td>
+            <td><input type="checkbox">Mail <br>
+                <input type="checkbox">Payroll <br>
+                <input type="checkbox">Self-service <br></td>
+        </tr>
+
+    </table>
+
+    <button>Login</button>
+    <button>Reset</button>
+
+</body>
+</html>
