@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .container {
+            width: 400px;
+            background-color: #67e3eb;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 10px;
+            text-align: left;
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input[type="date"] {
+            position: relative;
+            background: white;
+        }
+        .priority-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        input[type="radio"] {
+            margin-left: 10px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .submit-btn {
+            background-color: #3cb043;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .clear-btn {
+            background-color: #5d69f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project Management</h1>
+
+    <div class="container">
+        <form>
+            <label>Project Name</label>
+            <input type="text" placeholder="project name">
+
+            <label>Assigned to</label>
+            <select>
+                <option>Er Merry Petision</option>
+            </select>
+
+            <label>Start Date</label>
+            <input type="date">
+
+            <label>End Date</label>
+            <input type="date">
+
+            <label>Priority</label>
+            <div class="priority-options">
+                <input type="radio" name="priority">
+                <label style="font-weight: normal; display: inline;">High</label>
+
+                <input type="radio" name="priority">
+                <label style="font-weight: normal; display: inline;">Average</label>
+
+                <input type="radio" name="priority">
+                <label style="font-weight: normal; display: inline;">Low</label>
+            </div>
+
+            <label>Description</label>
+            <textarea></textarea>
+
+            <div class="buttons">
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="clear-btn">Clear</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
