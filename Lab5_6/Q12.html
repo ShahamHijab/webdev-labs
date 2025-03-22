@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q12</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            display: flex;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .login-form {
+            background: linear-gradient(to bottom, #4c62f8, #8a57fc);
+            padding: 40px;
+            width: 450px;
+            color: white;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-bottom: 10px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            background-color:#ffb300;
+            color:#4c62f8;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .credits {
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        .credits a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .image-section img {
+            width: 350px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Log in</h2>
+            <form>
+                <label for="username">Username *</label>
+                <input type="text" id="username" placeholder="Enter your Username" required>
+
+                <label for="password">Password *</label>
+                <input type="password" id="password" placeholder="Enter your Password" required>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" style="margin: -100px; margin-left: -170px; margin-right: -150px;">
+                    <label for="remember">Remember me</label>
+                </div>
+
+                <button type="submit">LOGIN</button>
+
+                <div class="links">
+                    <a href="#">Forgot password?</a>
+                    <a href="#">Don't have an account?</a>
+                </div>
+            </form>
+            <p class="credits">Image from <a href="#">Freepik</a></p>
+        </div>
+
+        <div class="image-section">
+            <img src="Image12.png" alt="Login Illustration">
+        </div>
+    </div>
+</body>
+</html>
