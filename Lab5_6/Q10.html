@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Q10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 850px;
+            height: 100vh;
+            background: linear-gradient(to right, black 35%, #f4c300 35% 65%, black 65%);
+            color: white;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .left {
+            width: 40%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .left h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .left p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+            border: 1px solid white;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .right {
+            width: 60%;
+            margin-top: 60px;
+            padding: 80px;
+        }
+
+        .right h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .submit-btn:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>LOCATION</h2><br>
+            <p>28 Jackson Blvd Ste 1020 Chicago<br>IL 60604-2340</p>
+            <br><br><br><br>
+            <h2>FOLLOW US</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+
+            <p>©2018 Privacy policy</p>
+        </div>
+
+        <div class="right">
+            <h2>CONTACT FORM</h2>
+            <div class="form-group">
+                <input type="text" placeholder="Enter your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Enter a valid email address">
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Enter your message"></textarea>
+            </div>
+            <button class="submit-btn">SUBMIT</button>
+        </div>
+    </div>
+</body>
+</html>
