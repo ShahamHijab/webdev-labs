@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q15</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #5B2DC5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .circle {
+            width: 250px;
+            height: 250px;
+            background: #FFC83D;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            right: 50%;
+            transform: translateX(50%);
+            z-index: 1;
+        }
+        .container {
+            background-color: white;
+            display: flex;
+            width: 750px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+        .form-container {
+            flex: 1;
+            padding: 20px;
+        }
+        .info-container {
+            flex: 1;
+            padding: 20px;
+            background-color: #F9F9F9;
+        }
+        h2 {
+            color: #5B2DC5;
+            margin-bottom: 15px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #5B2DC5;
+            outline: none;
+            background: transparent;
+        }
+        .checkbox {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox input {
+            margin-right: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #5B2DC5;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .info-container h3 {
+            color: #5B2DC5;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .info-container p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .bold {
+            font-weight: 600;
+        }
+        .image-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .image-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="container">
+        <div class="form-container">
+            <h2>Contact Us</h2>
+            <input type="text" placeholder="Enter your Name">
+            <input type="email" placeholder="Enter a valid email address">
+            <textarea placeholder="Message"></textarea>
+            <div class="checkbox">
+                <input type="checkbox" style="margin-left: -130px; margin-right: -150px;"> <label>I accept the <span style="color:#5B2DC5">Terms of Service</span></label>
+            </div>
+            <button class="submit-btn">SUBMIT</button>
+        </div>
+        <div class="info-container">
+            <h3>CALL US</h3>
+            <p>1 (234) 567-891</p>
+            <p>1 (234) 987-654</p>
+            <h3>LOCATION</h3>
+            <p>121 Rock Street, 21 Avenue, New York, NY 92103-9000</p>
+            <h3>OUR TOP SERVICES</h3>
+            <p class="bold">Self-Studying</p>
+            <p class="bold">Online Courses</p>
+            <p class="bold">Challenge Yourself</p>
+            <p>Image from Freepik</p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="image15.jpeg" alt="Graduate">
+    </div>
+</body>
+</html>

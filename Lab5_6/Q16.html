@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q16</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 800px;
+        }
+        .image-container {
+            position: relative;
+            width: 50%;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 260px;
+            display: block;
+        }
+        .form-container {
+            width: 50%;
+            padding: 30px;
+            background-color: #F9F9F9;
+            border-radius: 15px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-group input {
+            width: 99%;
+        }
+        .submit-btn {
+            width: 40%;
+            background-color: #42A5F5;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="image16.jpeg" alt="Dish">
+        </div>
+        <div class="form-container">
+            <h2>Book your table</h2>
+            <div class="input-group">
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" placeholder="Enter your phone">
+                </div>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your Name">
+                </div>
+            </div>
+            <label for="">Date</label>
+            <input type="text" placeholder="MM/DD/YYYY">
+            <label for="">Message</label>
+            <textarea placeholder="Enter your message"></textarea>
+            <button class="submit-btn">SUBMIT</button>
+        </div>
+    </div>
+</body>
+</html>
