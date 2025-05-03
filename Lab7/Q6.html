@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Q6</title>
+</head>
+<body class="bg-white min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-6xl w-full grid md:grid-cols-2 gap-8 items-center relative">
+
+    <div class="absolute w-96 h-96 bg-orange-400 rounded-tl-[150px] rounded-br-[150px] -left-12 top-1/4 -z-10 rotate-[20deg]"></div>
+    <div class="absolute w-96 h-96 bg-orange-400 rounded-tr-[150px] rounded-bl-[150px] left-0 top-1/2 -z-10 rotate-[40deg]"></div>
+
+    <div class="flex justify-center">
+      <img src="6.png" alt="Plate" class="max-w-full w-[400px] z-10 relative" />
+    </div>
+
+    <div class="bg-gray-100 rounded-[40px] p-8 shadow-md">
+      <h2 class="text-3xl font-light mb-6">Book your table</h2>
+      <form class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm mb-1">Phone</label>
+            <input type="tel" placeholder="Enter your phone (e.g. -)" class="w-full p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"/>
+          </div>
+          <div>
+            <label class="block text-sm mb-1">Name</label>
+            <input type="text" placeholder="Enter your Name" class="w-full p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Date</label>
+          <input type="text" placeholder="MM/DD/YYYY" class="w-full p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"/>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Message</label>
+          <textarea rows="4" placeholder="Enter your message" class="w-full p-3 rounded-xl border border-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-orange-400"></textarea>
+        </div>
+
+        <button type="submit" class="bg-sky-400 text-white px-8 py-3 rounded-full hover:bg-sky-500 transition">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

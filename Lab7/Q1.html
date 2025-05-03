@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+
+<body class="m-0 p-0 font-sans">
+  <div class="flex w-full h-screen">
+    <div class="w-[40%] bg-black text-white p-12 flex flex-col justify-center">
+      <h2 class="text-2xl font-bold mb-4">LOCATION</h2>
+      <p class="mb-8">28 Jackson Blvd Ste 1020 Chicago<br />IL 60604-2340</p>
+
+      <h3 class="text-xl font-bold mb-4">FOLLOW US</h3>
+      <div class="flex space-x-4 mb-8 text-white text-2xl">
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-yellow-400"><i class="fab fa-google"></i></a>
+      </div>
+
+      <p class="text-sm mt-auto">©2018 Privacy policy</p>
+    </div>
+
+    <div class="w-[60%] bg-black relative flex items-center">
+
+      <div class="absolute left-0 top-0 w-[40%] h-full bg-yellow-600"></div>
+
+      <div class="ml-[20%] w-[60%] text-white relative">
+        <h2 class="text-2xl font-bold mb-6">CONTACT FORM</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Enter your Name" required
+            class="w-full p-3 rounded-md border border-gray-300 text-black"/>
+          <input type="email" placeholder="Enter a valid email address" required
+            class="w-full p-3 rounded-md border border-gray-300 text-black"/>
+          <textarea placeholder="Enter your message" required
+            class="w-full p-3 rounded-md border border-gray-300 text-black h-32 resize-none"></textarea>
+          <button type="submit"
+            class="bg-white text-black px-6 py-3 rounded-md font-bold border-2 border-gray-300 hover:bg-gray-100 w-[40%]">
+            SUBMIT
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

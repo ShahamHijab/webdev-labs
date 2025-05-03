@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body class="flex justify-center items-center min-h-screen font-sans bg-white">
+
+  <div class="flex rounded-2xl overflow-hidden flex-wrap justify-center">
+    <div class="bg-gradient-to-b from-indigo-600 to-purple-500 text-white p-10 w-[450px] text-center rounded-2xl">
+      <h2 class="text-3xl mb-6 font-bold">Log in</h2>
+      <form class="space-y-3">
+
+        <div class="text-left">
+          <label for="username" class="block mb-1 text-sm font-bold">Username *</label>
+          <input type="text" id="username" placeholder="Enter your Username" required class="w-full p-3 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+
+        <div class="text-left">
+          <label for="password" class="block mb-1 text-sm font-bold">Password *</label>
+          <input type="password" id="password" placeholder="Enter your Password" required class="w-full p-3 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        </div>
+
+        <div class="flex items-center text-xs text-left space-x-2">
+          <input type="checkbox" id="remember" class="w-4 h-4">
+          <label for="remember">Remember me</label>
+        </div>
+
+        <button type="submit" class="w-full bg-yellow-400 text-indigo-700 font-bold p-3 rounded-full hover:bg-yellow-500 transition">LOGIN</button>
+
+        <div class="flex justify-between text-xs">
+          <a href="#" class="hover:underline">Forgot password?</a>
+          <a href="#" class="hover:underline">Don't have an account?</a>
+        </div>
+
+      </form>
+
+      <p class="text-xs mt-4">Image from <a href="#" class="underline">Freepik</a></p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-section flex justify-center items-center p-4">
+      <img src="3.png" alt="Login Illustration" class="w-[350px] h-full object-cover rounded-2xl ml-8">
+    </div>
+
+  </div>
+
+</body>
+</html>

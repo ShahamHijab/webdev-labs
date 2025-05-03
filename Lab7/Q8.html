@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q8</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#d8c7bd] min-h-screen flex items-center justify-center px-4 py-10">
+
+  <div class="flex flex-col md:flex-row bg-[#d8c7bd] w-full max-w-6xl rounded-lg overflow-hidden">
+    <div class="md:w-1/2 mb-6 md:mb-0">
+      <img src="8.png" alt="Devices" class="w-full h-full object-cover" />
+    </div>
+    <div class="md:w-1/2 px-6 md:px-10 flex flex-col justify-center">
+      <form class="w-full">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex flex-col w-full">
+            <label for="email" class="font-semibold mb-1">Email</label>
+            <input type="email" id="email" placeholder="Enter a valid email address" class="p-2 border border-gray-300 rounded"/>
+          </div>
+          <div class="flex flex-col w-full">
+            <label for="name" class="font-semibold mb-1">Name</label>
+            <input type="text" id="name" placeholder="Enter your Name" class="p-2 border border-gray-300 rounded"/>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="address" class="font-semibold mb-1">Address</label>
+          <input type="text" id="address" placeholder="Enter your address" class="w-full p-2 border border-gray-300 rounded"/>
+        </div>
+
+        <div class="mb-6">
+          <label for="message" class="font-semibold mb-1">Message</label>
+          <textarea id="message" placeholder="Enter your message" rows="4" class="w-full p-2 border border-gray-300 rounded resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-[#f2762e] hover:bg-[#e2651e] text-white py-3 rounded-full font-bold tracking-wider transition">
+          SUBMIT
+        </button>
+      </form>
+
+      <p class="text-center text-sm mt-8">
+        Images from <a href="#" class="underline text-black font-semibold">Freepik</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
