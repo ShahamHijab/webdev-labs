@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q5</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <div class="bg-white p-6 rounded shadow-md text-center space-y-4">
+    <input
+      id="start"
+      type="text"
+      placeholder="Starting Value"
+      class="border-2 border-blue-500 rounded px-4 py-2 w-64"
+    />
+    <br />
+    <input
+      id="end"
+      type="text"
+      placeholder="Ending Value"
+      class="border-2 border-blue-500 rounded px-4 py-2 w-64"
+    />
+    <br />
+    <button
+      onclick="generateRandom()"
+      class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-64"
+    >
+      Random Number
+    </button>
+    <br />
+    <button
+      onclick="resetValues()"
+      class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-64"
+    >
+      Reset Value
+    </button>
+    <p id="result" class="mt-4 font-bold text-lg text-gray-700"></p>
+  </div>
+
+  <script>
+    function generateRandom() {
+      const start = document.getElementById("start").value.trim();
+      const end = document.getElementById("end").value.trim();
+      const result = document.getElementById("result");
+
+      if (start === "" || end === "") {
+        result.textContent = "Please fill in both fields.";
+        return;
+      }
+
+      if (!/^\d+$/.test(start) || !/^\d+$/.test(end)) {
+        result.textContent = "Only whole numeric values allowed.";
+        return;
+      }
+
+      const min = parseInt(start);
+      const max = parseInt(end);
+
+      if (min > max) {
+        result.textContent = "Starting value must be less than or equal to Ending value.";
+        return;
+      }
+
+      const random = Math.floor(Math.random() * (max - min + 1)) + min;
+      result.textContent = `Random Number: ${random}`;
+    }
+
+    function resetValues() {
+      document.getElementById("start").value = "";
+      document.getElementById("end").value = "";
+      document.getElementById("result").textContent = "";
+    }
+  </script>
+</body>
+</html>

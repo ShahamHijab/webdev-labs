@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white flex items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-xs p-4 flex flex-col items-center">
+
+    <input id="start" type="number" placeholder="Starting Value"
+      class="w-60 mb-2 px-3 py-2 border border-gray-300 rounded text-sm" />
+
+    <input id="end" type="number" placeholder="End Value"
+      class="w-60 mb-4 px-3 py-2 border border-gray-300 rounded text-sm" />
+
+    <button onclick="checkNumbers()"
+      class="w-60 mb-2 bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded shadow">
+      Submit
+    </button>
+
+    <button onclick="clearForm()"
+      class="w-60 bg-gray-200 hover:bg-gray-300 text-sm px-4 py-2 rounded shadow">
+      Cancel
+    </button>
+
+    <div id="result" class="mt-6 text-center text-sm font-medium text-gray-800 space-y-1"></div>
+  </div>
+
+  <script>
+    function checkNumbers() {
+      const start = document.getElementById('start').value.trim();
+      const end = document.getElementById('end').value.trim();
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '';
+
+      if (start === '' || end === '') {
+        resultDiv.innerHTML = '<div class="bg-red-100 text-red-600 px-3 py-2 rounded">Both fields are required.</div>';
+        return;
+      }
+
+      const startNum = parseInt(start);
+      const endNum = parseInt(end);
+
+      if (isNaN(startNum) || isNaN(endNum)) {
+        resultDiv.innerHTML = '<div class="bg-red-100 text-red-600 px-3 py-2 rounded">Enter valid numbers.</div>';
+        return;
+      }
+
+      if (endNum <= startNum) {
+        resultDiv.innerHTML = '<div class="bg-red-100 text-red-600 px-3 py-2 rounded">End value must be greater than start value.</div>';
+        return;
+      }
+
+      for (let i = startNum; i <= endNum; i++) {
+        const line = document.createElement('div');
+        line.textContent = `${i} is ${i % 2 === 0 ? 'even' : 'odd'}`;
+        resultDiv.appendChild(line);
+      }
+    }
+
+    function clearForm() {
+      document.getElementById('start').value = '';
+      document.getElementById('end').value = '';
+      document.getElementById('result').innerHTML = '';
+    }
+  </script>
+
+</body>
+</html>
