@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q6</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-xl font-bold mb-4 text-center">Palindrome Checker</h1>
+
+    <input
+      type="text"
+      id="numberInput"
+      placeholder="Enter Only Numeric Value"
+      class="w-full p-2 border border-gray-300 rounded mb-4 text-center text-gray-700"
+    />
+
+    <div class="flex justify-between">
+      <button
+        onclick="checkPalindrome()"
+        class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+      >
+        Check Palindrome
+      </button>
+      <button
+        onclick="resetForm()"
+        class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+      >
+        Reset Value
+      </button>
+    </div>
+
+    <p id="result" class="mt-4 text-center text-lg font-medium"></p>
+  </div>
+
+  <script>
+    function checkPalindrome() {
+      const input = document.getElementById('numberInput').value.trim();
+      const result = document.getElementById('result');
+
+      if (input === '') {
+        result.textContent = 'Please enter a value.';
+        result.className = 'mt-4 text-center text-red-500 font-medium';
+        return;
+      }
+
+      if (!/^\d+$/.test(input)) {
+        result.textContent = 'Only positive numeric values are allowed.';
+        result.className = 'mt-4 text-center text-red-500 font-medium';
+        return;
+      }
+
+      const reversed = input.split('').reverse().join('');
+      if (input === reversed) {
+        result.textContent = `${input} is a Palindrome.`;
+        result.className = 'mt-4 text-center text-green-600 font-bold';
+      } else {
+        result.textContent = `${input} is NOT a Palindrome.`;
+        result.className = 'mt-4 text-center text-red-600 font-bold';
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('numberInput').value = '';
+      document.getElementById('result').textContent = '';
+    }
+  </script>
+
+</body>
+</html>

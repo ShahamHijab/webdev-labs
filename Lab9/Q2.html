@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <div class="bg-white p-6 rounded shadow-md text-center space-y-4 w-[350px]">
+    <label for="values" class="block text-gray-700 text-sm mb-1">Enter Ten values</label>
+    <input
+      id="values"
+      type="text"
+      class="border-2 border-blue-500 px-4 py-2 w-full rounded"
+      placeholder="e.g. 1,2,3,4,5,1,2,3,4,5"
+    />
+
+    <button
+      onclick="compareArrays()"
+      class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700"
+    >
+      OK
+    </button>
+
+    <p id="result" class="text-gray-800 font-semibold"></p>
+  </div>
+
+  <script>
+    function compareArrays() {
+      const input = document.getElementById("values").value.trim();
+      const result = document.getElementById("result");
+
+      if (input === "") {
+        alert("Please enter values");
+        return;
+      }
+
+      const values = input.split(",").map(val => val.trim());
+
+      if (values.length !== 10) {
+        alert("Please enter exactly 10 values");
+        return;
+      }
+
+      const array1 = values.slice(0, 5);
+      const array2 = values.slice(5, 10);
+
+      let sameWithoutFunc = true;
+      for (let i = 0; i < 5; i++) {
+        if (array1[i] !== array2[i]) {
+          sameWithoutFunc = false;
+          break;
+        }
+      }
+
+      function areArraysEqual(arr1, arr2) {
+        return arr1.every((val, index) => val === arr2[index]);
+      }
+
+      const sameWithFunc = areArraysEqual(array1, array2);
+
+      if (sameWithoutFunc && sameWithFunc) {
+        result.textContent = "The arrays have the same elements";
+      } else {
+        result.textContent = "The arrays have different elements";
+      }
+    }
+  </script>
+
+</body>
+</html>

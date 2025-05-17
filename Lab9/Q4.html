@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen bg-white flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md text-center space-y-4">
+    <input
+      type="text"
+      id="inputString"
+      placeholder="Enter the String"
+      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <input
+      type="text"
+      id="inputChar"
+      maxlength="1"
+      placeholder="Type Single character"
+      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <div class="flex justify-center space-x-4">
+      <button
+        onclick="checkCharacterCount()"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-md"
+      >
+        OK
+      </button>
+      <button
+        onclick="clearFields()"
+        class="bg-gray-300 hover:bg-gray-400 text-black font-semibold px-6 py-2 rounded-md"
+      >
+        Cancel
+      </button>
+    </div>
+    <p id="result" class="text-lg font-medium text-gray-700"></p>
+  </div>
+
+  <script>
+    function checkCharacterCount() {
+      const str = document.getElementById('inputString').value;
+      const char = document.getElementById('inputChar').value;
+
+      if (char.length !== 1) {
+        alert("Please enter a single character.");
+        return;
+      }
+
+      const count = [...str].filter(c => c === char).length;
+      document.getElementById('result').textContent =`'${char}' occurred ${count} time(s) in the string.`;
+    }
+
+    function clearFields() {
+      document.getElementById('inputString').value = '';
+      document.getElementById('inputChar').value = '';
+      document.getElementById('result').textContent = '';
+    }
+  </script>
+</body>
+</html>

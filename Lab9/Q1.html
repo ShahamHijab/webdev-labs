@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <div class="bg-white p-6 rounded shadow-md text-center space-y-4 w-[300px]">
+    <label for="num1" class="block text-gray-700 text-sm mb-1">Enter a first positive integer:</label>
+    <input
+      id="num1"
+      type="text"
+      class="border-2 border-blue-500 px-4 py-2 w-full rounded"
+      placeholder="First Number"
+    />
+
+    <label for="num2" class="block text-gray-700 text-sm mb-1">Enter a second positive integer:</label>
+    <input
+      id="num2"
+      type="text"
+      class="border-2 border-blue-500 px-4 py-2 w-full rounded"
+      placeholder="Second Number"
+    />
+
+    <button
+      onclick="calculateGCD()"
+      class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700"
+    >
+      OK
+    </button>
+  </div>
+
+  <script>
+    function calculateGCD() {
+      const num1 = document.getElementById("num1").value.trim();
+      const num2 = document.getElementById("num2").value.trim();
+
+      // Check for empty fields
+      if (num1 === "" || num2 === "") {
+        alert("Plz enter positive number");
+        return;
+      }
+
+      // Check for valid positive integers
+      if (!/^\d+$/.test(num1) || parseInt(num1) <= 0 ||
+          !/^\d+$/.test(num2) || parseInt(num2) <= 0) {
+        alert("Plz enter positive number");
+        return;
+      }
+
+      const a = parseInt(num1);
+      const b = parseInt(num2);
+
+      // GCD using Euclidean algorithm
+      function findGCD(x, y) {
+        while (y !== 0) {
+          let temp = y;
+          y = x % y;
+          x = temp;
+        }
+        return x;
+      }
+
+      const gcd = findGCD(a, b);
+      alert(`The GCD of ${a} and ${b} is: ${gcd}`);
+    }
+  </script>
+
+</body>
+</html>
