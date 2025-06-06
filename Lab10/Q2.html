@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white border border-blue-600 p-6 rounded-lg shadow-md w-96">
+    <div class="flex items-center mb-4">
+      <input type="number" id="startValue" placeholder="Start Value"
+             class="p-2 border border-gray-300 rounded w-1/2" />
+      <span id="startError" class="text-red-600 text-sm ml-2"> </span>
+    </div>
+
+    <div class="text-center mb-4 font-semibold">To</div>
+
+    <div class="flex items-center mb-4">
+      <input type="number" id="endValue" placeholder="End value"
+             class="p-2 border border-gray-300 rounded w-1/2" />
+      <span id="endError" class="text-red-600 text-sm ml-2"> </span>
+    </div>
+
+    <div class="flex justify-between mt-4">
+      <button onclick="calculateSum()" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">OK</button>
+      <button onclick="resetForm()" class="bg-gray-400 text-white px-6 py-2 rounded hover:bg-gray-500">Cancel</button>
+    </div>
+
+    <p id="result" class="mt-4 text-green-700 font-semibold text-center"></p>
+  </div>
+
+  <script>
+    function calculateSum() {
+      const start = document.getElementById("startValue").value.trim();
+      const end = document.getElementById("endValue").value.trim();
+      const startNum = parseInt(start);
+      const endNum = parseInt(end);
+
+      const startError = document.getElementById("startError");
+      const endError = document.getElementById("endError");
+      const result = document.getElementById("result");
+
+      startError.textContent = "";
+      endError.textContent = "";
+      result.textContent = "";
+
+      let valid = true;
+
+      if (start === "" || isNaN(startNum) || startNum <= 0) {
+        startError.textContent = "Plz Enter positive value";
+        valid = false;
+      }
+
+      if (end === "" || isNaN(endNum) || endNum <= 0) {
+        endError.textContent = "Plz Enter positive value";
+        valid = false;
+      }
+
+      if (valid) {
+        if (startNum > endNum) {
+          result.textContent = "Start value must be less than or equal to End value.";
+        } else {
+          let sum = 0;
+          for (let i = startNum; i <= endNum; i++) {
+            sum += i;
+          }
+          result.textContent = `Sum: ${sum}`;
+        }
+      }
+    }
+
+    function resetForm() {
+      document.getElementById("startValue").value = "";
+      document.getElementById("endValue").value = "";
+      document.getElementById("startError").textContent = "";
+      document.getElementById("endError").textContent = "";
+      document.getElementById("result").textContent = "";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white border border-purple-700 p-6 rounded-lg shadow-md w-96">
+    <input type="number" id="decimalInput" placeholder="Enter Decimal Number"
+           class="w-full p-2 border border-gray-300 rounded mb-4" />
+
+    <div class="mb-4">
+      <label class="block"><input type="radio" name="conversion" value="binary" class="mr-2">Decimal to Binary</label>
+      <label class="block"><input type="radio" name="conversion" value="hex" class="mr-2">Decimal to Hexadecimal</label>
+    </div>
+
+    <div class="flex justify-between">
+      <button onclick="convertDecimal()" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700">OK</button>
+      <button onclick="resetDecimal()" class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700">Cancel</button>
+    </div>
+
+    <p id="convertResult" class="mt-4 text-green-700 font-semibold text-center"></p>
+  </div>
+
+  <script>
+    function convertDecimal() {
+      const num = parseInt(document.getElementById("decimalInput").value);
+      const radios = document.getElementsByName("conversion");
+      const result = document.getElementById("convertResult");
+      result.textContent = "";
+
+      if (isNaN(num)) {
+        result.textContent = "Please enter a valid decimal number.";
+        return;
+      }
+
+      let selected = "";
+      for (let radio of radios) {
+        if (radio.checked) selected = radio.value;
+      }
+
+      if (selected === "binary") {
+        result.textContent = `Binary: ${num.toString(2)}`;
+      } else if (selected === "hex") {
+        result.textContent = `Hexadecimal: ${num.toString(16).toUpperCase()}`;
+      } else {
+        result.textContent = "Please select a conversion option.";
+      }
+    }
+
+    function resetDecimal() {
+      document.getElementById("decimalInput").value = "";
+      document.getElementById("convertResult").textContent = "";
+      const radios = document.getElementsByName("conversion");
+      for (let radio of radios) radio.checked = false;
+    }
+  </script>
+</body>
+</html>

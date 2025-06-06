@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg shadow-lg w-80 border border-green-600">
+    <input type="number" id="guessInput" placeholder="Enter Only Numeric Value"
+           class="w-full p-2 border border-gray-300 rounded mb-4 text-center focus:outline-none" />
+
+    <div class="mb-4 space-y-2">
+      <label class="flex items-center space-x-2">
+        <input type="radio" name="level" value="basic" class="accent-green-600">
+        <span class="font-bold">Basic Level</span>
+      </label>
+      <label class="flex items-center space-x-2">
+        <input type="radio" name="level" value="intermediate" class="accent-green-600">
+        <span class="font-bold">Intermediate Level</span>
+      </label>
+      <label class="flex items-center space-x-2">
+        <input type="radio" name="level" value="advanced" class="accent-green-600">
+        <span class="font-bold">Advance Level</span>
+      </label>
+    </div>
+
+    <div class="flex justify-between">
+      <button onclick="checkGuess()"
+              class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">Check</button>
+      <button onclick="resetGame()"
+              class="bg-red-600 text-white px-4 py-2 rounded shadow hover:bg-red-700">Reset</button>
+    </div>
+
+    <p id="result" class="mt-4 font-medium text-center text-blue-700"></p>
+  </div>
+
+  <script>
+    let min = 0, max = 0, random = 0, selected = false;
+
+    function setRange(level) {
+      if (level === "basic") { min = 1; max = 10; }
+      else if (level === "intermediate") { min = 50; max = 100; }
+      else if (level === "advanced") { min = 101; max = 500; }
+      random = Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function checkGuess() {
+      const levelRadios = document.getElementsByName("level");
+      let levelSelected = false;
+      for (const radio of levelRadios) {
+        if (radio.checked) {
+          setRange(radio.value);
+          levelSelected = true;
+          break;
+        }
+      }
+
+      const result = document.getElementById("result");
+      const guess = parseInt(document.getElementById("guessInput").value);
+
+      if (!levelSelected) {
+        result.textContent = "Please select a level.";
+        return;
+      }
+
+      if (isNaN(guess)) {
+        result.textContent = "Please enter a number.";
+        return;
+      }
+
+      if (guess < min || guess > max) {
+        result.textContent = `Enter a number between ${min} and ${max}.`;
+        return;
+      }
+
+      if (guess === random) {
+        result.textContent = "Correct! You guessed the number.";
+      } else {
+        result.textContent = "Wrong guess! Try again.";
+      }
+    }
+
+    function resetGame() {
+      document.getElementById("guessInput").value = "";
+      document.getElementById("result").textContent = "";
+      const radios = document.getElementsByName("level");
+      for (const radio of radios) radio.checked = false;
+      random = 0;
+    }
+  </script>
+</body>
+</html>

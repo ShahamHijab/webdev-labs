@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q5</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white border border-blue-800 p-6 rounded-lg shadow-md w-96">
+    <input type="number" id="tempInput" placeholder="Enter Temperature"
+           class="w-full p-2 border border-gray-300 rounded mb-4" />
+
+    <div class="mb-4">
+      <label class="block"><input type="radio" name="tempType" value="ctof" class="mr-2">Celsius to Fahrenheit</label>
+      <label class="block"><input type="radio" name="tempType" value="ftoc" class="mr-2">Fahrenheit to Celsius</label>
+      <label class="block"><input type="radio" name="tempType" value="ctok" class="mr-2">Celsius to Kelvin</label>
+      <label class="block"><input type="radio" name="tempType" value="ktoc" class="mr-2">Kelvin to Celsius</label>
+    </div>
+
+    <div class="flex justify-between">
+      <button onclick="convertTemperature()" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">OK</button>
+      <button onclick="resetTemperature()" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    function convertTemperature() {
+      const value = parseFloat(document.getElementById("tempInput").value);
+      const radios = document.getElementsByName("tempType");
+      let type = "";
+
+      for (const r of radios) {
+        if (r.checked) type = r.value;
+      }
+
+      if (isNaN(value) || type === "") {
+        alert("Please enter a value and select a conversion.");
+        return;
+      }
+
+      let result = "";
+
+      if (type === "ctok") result = `${(value + 273.15).toFixed(2)} K`;
+      else if (type === "ktoc") result = `${(value - 273.15).toFixed(2)} °C`;
+      else if (type === "ftoc") result = `${((value - 32) * 5/9).toFixed(2)} °C`;
+      else if (type === "ctof") result = `${(value * 9/5 + 32).toFixed(2)} °F`;
+
+      alert("Converted Temperature: " + result);
+    }
+
+    function resetTemperature() {
+      document.getElementById("tempInput").value = "";
+      const radios = document.getElementsByName("tempType");
+      for (let r of radios) r.checked = false;
+    }
+  </script>
+</body>
+</html>
