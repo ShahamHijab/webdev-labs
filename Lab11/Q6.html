@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q6</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+  <div id="modal" class="bg-white p-6 rounded shadow-md w-[400px]">
+    <label class="block text-black font-semibold mb-2" for="value-input">Enter Ten values:</label>
+    <input
+      type="text"
+      id="value-input"
+      class="w-full border border-gray-300 rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <div class="flex justify-end space-x-2">
+      <button
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        onclick="processInput()"
+      >OK</button>
+      <button
+        class="text-blue-600 px-4 py-2 rounded hover:underline"
+        onclick="resetInput()"
+      >Cancel</button>
+    </div>
+  </div>
+
+  <div id="result" class="mt-6 text-lg font-medium text-green-700 hidden"></div>
+
+  <script>
+    function processInput() {
+      const input = document.getElementById('value-input').value;
+      const values = input.split(',').map(val => parseInt(val.trim()));
+
+      if (values.length !== 10 || values.some(isNaN)) {
+        alert("Please enter exactly 10 valid numbers separated by commas.");
+        return;
+      }
+
+      const array2D = [values.slice(0, 5), values.slice(5, 10)];
+      const sum = values.reduce((acc, val) => acc + val, 0);
+
+      document.getElementById('result').textContent =
+        `You entered: ${JSON.stringify(array2D)}. Sum of values: ${sum}`;
+      document.getElementById('result').classList.remove('hidden');
+    }
+
+    function resetInput() {
+      document.getElementById('value-input').value = '';
+      document.getElementById('result').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

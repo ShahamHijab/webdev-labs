@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q3</title>
+  <script>
+    function calculateArea() {
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+      const c = parseFloat(document.getElementById("c").value);
+      const result = document.getElementById("result");
+
+      if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+        result.innerHTML = "Please enter valid side lengths";
+        return;
+      }
+
+      const s = (a + b + c) / 2;
+      const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+      result.innerHTML = "Area of Triangle: " + area.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <h2>JavaScript function to find the area of a triangle</h2>
+
+  <p>Enter the value of side 1: <input type="text" id="a" value="3"></p>
+  <p>Enter the value of side 2: <input type="text" id="b" value="4"></p>
+  <p>Enter the value of side 3: <input type="text" id="c" value="5"></p>
+
+  <button onclick="calculateArea()">Click Here!</button>
+
+  <p id="result"></p>
+</body>
+</html>

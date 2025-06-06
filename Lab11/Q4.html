@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white flex flex-col items-center justify-center p-10 gap-6">
+
+  <input type="text" id="radius" placeholder="Enter Value"
+         class="border-2 border-gray-300 focus:outline-none focus:border-blue-500 px-4 py-2 rounded text-center placeholder-gray-400 font-semibold w-72">
+
+  <div class="flex flex-col items-start gap-2">
+    <label class="flex items-center gap-2 font-semibold">
+      <input type="checkbox" id="area" checked>
+      <span>Area of Circle</span>
+    </label>
+    <label class="flex items-center gap-2 font-semibold">
+      <input type="checkbox" id="circumference" checked>
+      <span>Circumference of Circle</span>
+    </label>
+  </div>
+
+  <button onclick="calculate()"
+          class="bg-[#8B004D] hover:bg-[#6d003c] text-white font-semibold px-10 py-2 rounded-md text-lg">
+    Calculate
+  </button>
+
+  <div id="output" class="mt-4 text-center font-medium text-gray-800"></div>
+
+  <script>
+    function calculate() {
+      const radius = parseFloat(document.getElementById("radius").value);
+      const showArea = document.getElementById("area").checked;
+      const showCirc = document.getElementById("circumference").checked;
+      const output = document.getElementById("output");
+
+      if (isNaN(radius) || radius <= 0) {
+        output.textContent = "Please enter a valid positive number.";
+        return;
+      }
+
+      let result = "";
+      if (showArea) {
+        const area = Math.PI * radius * radius;
+        result += `Area: ${area.toFixed(2)}\n`;
+      }
+      if (showCirc) {
+        const circ = 2 * Math.PI * radius;
+        result += `Circumference: ${circ.toFixed(2)}`;
+      }
+
+      output.textContent = result.trim();
+    }
+  </script>
+
+</body>
+</html>

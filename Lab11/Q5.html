@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q5</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-white">
+
+  <div class="border border-gray-300 p-6 rounded text-center w-80 shadow-sm">
+    <p class="mb-4 font-medium">
+      Enter the width and height of your<br>triangle to calculate the area
+    </p>
+
+    <div class="mb-3 text-left">
+      <label for="width" class="font-semibold">Width (b):</label>
+      <input type="text" id="width"
+             class="border border-gray-400 px-2 py-1 w-full mt-1 focus:outline-none focus:ring-1 focus:ring-blue-400">
+    </div>
+
+    <div class="mb-4 text-left">
+      <label for="height" class="font-semibold">Height (h):</label>
+      <input type="text" id="height"
+             class="border border-gray-400 px-2 py-1 w-full mt-1 focus:outline-none focus:ring-1 focus:ring-blue-400">
+    </div>
+
+    <button onclick="calculateArea()"
+            class="bg-gray-200 border border-gray-400 px-4 py-2 font-medium hover:bg-gray-300">
+      Calculate area
+    </button>
+
+    <p id="result" class="mt-4 font-semibold text-gray-800"></p>
+  </div>
+
+  <script>
+    function calculateArea() {
+      const width = parseFloat(document.getElementById('width').value);
+      const height = parseFloat(document.getElementById('height').value);
+      const result = document.getElementById('result');
+
+      if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
+        result.textContent = "Please enter valid positive numbers.";
+        return;
+      }
+
+      const area = 0.5 * width * height;
+      result.textContent = `Area: ${area.toFixed(2)}`;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q1</title>
+  <script>
+    function convertDistance() {
+      const value = parseFloat(document.getElementById("value").value);
+      const fromUnit = document.getElementById("from").value;
+      const toUnit = document.getElementById("to").value;
+      const resultField = document.getElementById("result");
+
+      if (isNaN(value)) {
+        resultField.value = "Invalid input";
+        return;
+      }
+      const toMeters = {
+        Kilometer: 1000,
+        Meter: 1,
+        Centimeter: 0.01,
+        Mile: 1609.34
+      };
+      const meters = value * toMeters[fromUnit];
+      const result = meters / toMeters[toUnit];
+
+      resultField.value = result.toFixed(4);
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-white">
+  <div class="flex flex-col items-center gap-4">
+    <div class="flex items-center gap-4">
+      <div class="flex flex-col items-center">
+        <select id="from" class="border px-3 py-2 mb-2">
+          <option>Kilometer</option>
+          <option>Centimeter</option>
+          <option>Mile</option>
+          <option>Meter</option>
+        </select>
+        <input id="value" type="text" placeholder="Enter a value" class="border px-2 py-1 text-center">
+      </div>
+      <div class="flex flex-col items-center">
+        <select id="to" class="border px-3 py-2 mb-2">
+          <option>Kilometer</option>
+          <option>Centimeter</option>
+          <option>Mile</option>
+          <option>Meter</option>
+        </select>
+        <input id="result" type="text" placeholder="Answer" readonly class="border px-2 py-1 text-center">
+      </div>
+    </div>
+    <button onclick="convertDistance()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Conversion</button>
+  </div>
+</body>
+</html>

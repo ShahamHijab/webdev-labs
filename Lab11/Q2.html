@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2</title>
+  <script>
+    function swapValues() {
+      let a = document.getElementById("val1").value;
+      let b = document.getElementById("val2").value;
+      const method = document.querySelector('input[name="method"]:checked')?.value;
+
+      if (a === "" || b === "") {
+        alert("Fields cannot be empty.");
+        return;
+      }
+      if (!/^[1-9][0-9]{0,2}$/.test(a) || !/^[1-9][0-9]{0,2}$/.test(b)) {
+        alert("Only positive numbers up to 3 digits allowed.");
+        return;
+      }
+
+      a = parseInt(a);
+      b = parseInt(b);
+
+      switch(method) {
+        case "temp":
+          let temp = a;
+          a = b;
+          b = temp;
+          break;
+        case "addsub":
+          a = a + b;
+          b = a - b;
+          a = a - b;
+          break;
+        case "xor":
+          a = a ^ b;
+          b = a ^ b;
+          a = a ^ b;
+          break;
+        case "destruct":
+          [a, b] = [b, a];
+          break;
+        default:
+          alert("Select a method");
+          return;
+      }
+
+      document.getElementById("val1").value = a;
+      document.getElementById("val2").value = b;
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-8 bg-white flex flex-col items-center">
+
+  <div class="flex flex-col gap-4 mb-4 w-64">
+    <input type="text" id="val1" placeholder="Enter First Value"
+           class="border-2 border-gray-300 focus:outline-none focus:border-blue-500 px-4 py-2 rounded text-center placeholder-gray-400 font-semibold">
+    <input type="text" id="val2" placeholder="Enter Second Value"
+           class="border-2 border-gray-300 focus:outline-none focus:border-blue-500 px-4 py-2 rounded text-center placeholder-gray-400 font-semibold">
+  </div>
+
+  <div class="flex flex-col items-start gap-2 mb-6">
+    <label class="flex items-center gap-2 font-semibold">
+      <input type="radio" name="method" value="temp" checked>
+      <span>Using Third Variable</span>
+    </label>
+    <label class="flex items-center gap-2 font-semibold">
+      <input type="radio" name="method" value="destruct">
+      <span>Without Third Variable</span>
+    </label>
+    <label class="flex items-center gap-2 font-semibold">
+      <input type="radio" name="method" value="addsub">
+      <span>Using +, - Operator</span>
+    </label>
+    <label class="flex items-center gap-2 font-semibold">
+      <input type="radio" name="method" value="xor">
+      <span>Using *, / Operator</span>
+    </label>
+  </div>
+
+  <button onclick="swapValues()"class="bg-[#8B004D] hover:bg-[#6d003c] text-white px-8 py-2 rounded-md font-semibold text-lg">
+    Swapping Value
+  </button>
+
+</body>
+</html>
